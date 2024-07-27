@@ -1,0 +1,33 @@
+* React make it's DOM called = Virtual DOM.
+TODO BEST PRACTICES:
+* file name = Capital first alphabet
+* file extension = .jsx
+* function name = Capital file alphabet
+
+
+? CREATION OF REACT FILE WITH VITE:
+* command in terminal = npm create vite@latest.
+? INSTALL IMPORTANT MODULES:
+* npm install / inside that particular folder.
+? RUN FILE:
+* npm run dev
+
+
+
+? INJECT REACT WITH HTML:
+*  Browser only know html and css language, and as we did inject javascript code in html file using "<script>" tag 
+* we also need to inject react code file in html and css page file we will learn how....
+
+
+? MAKING FUNCTION WHICH RETURN HTML ELEMENTS:
+* always name them with first upper case alphabet like Add , Sum , Mul  ....more
+* Vite need file extension to be jsx and not js / some vite configurations need to be followed
+* in Jsx you can only return one element at the time that's why <> inside the fragment elements to be returned should be placed
+
+! here you can't return more than one tag , whatever you want to be between < > closing tags and nothing else.
+function App() {
+  return (
+       <h1>Harshita</h1>   
+      <Playing/> //for this i have to import playing in App.jsx too
+  )
+}

@@ -2,22 +2,22 @@ import { useState } from 'react' // TODO hook import here useState is imported u
 import './App.css'
 
 function App() {
-  let counter = 0;
-  const addValue = ()=>{
-      console.log("add clicked")
-      counter++;
-  }
+  const [counter , setCounter] = useState(0);
+  
   return (
     <>
-      <h1>hello world</h1>
-      <h2>Counter value :  {counter}</h2>  
-      <button onClick={ addValue}>+</button> 
+      <h1>Use State Hook</h1>
+      <h2>Counter value : {counter}</h2>  
+      <button onClick={()=>{
+        console.log("add clicked");
+        setCounter(counter+1);
+      }} disabled = {counter >=10}>+</button> 
       <br></br>
       <br></br>
-      <button onClick={ ()=>{
+      <button  onClick={()=>{
         console.log("minus clicked");
-        counter--;
-      }}>-</button>
+        setCounter(counter -1);
+      }} disabled = { counter<=0}>-</button>
     </>
   )
 }

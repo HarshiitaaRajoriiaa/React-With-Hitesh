@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react' // TODO hook import here useState is imported u can import more like import { useState  , useEffect} from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [counter , setCounter] = useState(0);
+  
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Use State Hook</h1>
+      <h2>Counter value : {counter}</h2>  
+      <button onClick={()=>{
+        console.log("add clicked");
+        setCounter(counter+1);
+      }} disabled = {counter >=10}>+</button> 
+      <br></br>
+      <br></br>
+      <button  onClick={()=>{
+        console.log("minus clicked");
+        setCounter(counter -1);
+      }} disabled = { counter<=0}>-</button>
     </>
   )
 }
-
 export default App
+
+
+// ? NOTE: here we can see counter isn't updating even after using the function and clear working as well. which is happening because in REACT UI manipulation is under controlled by REACT itself .

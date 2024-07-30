@@ -9,7 +9,7 @@
 ##  *Why React??*
 * Trend, Hype, helps in building UI, jobs.
 * Easy to manage complex FrontEnd.
-## *When JS?*
+## *When React?*
 * After Mastering JS and DOM specially.
 * most projects don't need React in it's initial phase. Try making projects by JS first. React is expensive then JS.
 ## *React Roadmap!*

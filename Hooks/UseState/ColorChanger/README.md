@@ -1,8 +1,5 @@
-# React + Vite
+### Colorchanger:
+* i also made this mini thing using useState hook, you can play with it.
+* code is provided in ChangeColor.jsx file you can learn it from their if you want to.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Happy coding🥰

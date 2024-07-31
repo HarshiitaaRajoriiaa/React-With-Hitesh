@@ -1,8 +1,9 @@
-# React + Vite
+### Counter using Hook === useState()
+* i made counter project while learning usestate hook in react which manage the state and link it with the ui of the html page for displaying the updation in any value mentioned in useState function while changing the state.
+``` js
+ const [counter , setCounter] = useState(0)
+ ```
+ * here wherever counter variable is displayed in html page will be update to value manipulated by set
+ counter method.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ * can go through App.jsx file code for the same.

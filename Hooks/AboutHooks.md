@@ -8,3 +8,11 @@
 * Hooks simply the code, allow to split the logic into smaller, reusable functions., make it easier to understand and maintain.
 
 * Allow you to reuse stateful logic without changing your component hierarchy. They make it possible to extract and share logic between components.
+
+``` java script 
+// you have to import hooks from react
+
+import  {useState} from 'react';
+// you can import other hooks too
+import {useState , useEffect , useMemo...} from 'react';
+```

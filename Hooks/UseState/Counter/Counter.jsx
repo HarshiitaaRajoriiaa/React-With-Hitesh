@@ -1,13 +1,8 @@
 import { useState } from 'react' //import hooks from react
-import './App.css'
-
-function App() {
+import './Counter.css'
+function CounterProject() {
   
      let [counter , setCounter]  = useState(0); //return array
-      const minusValue = ()=>{
-        console.log("minus clicked")
-          setCounter(counter - 1);
-        }
   return (
     <>
       <div class="main">
@@ -18,9 +13,12 @@ function App() {
         console.log("add clicked")
         setCounter(counter + 1);
       } } disabled={counter >= 20}>+</button>
-      <button class ="minus" onClick={minusValue} disabled={counter < 1}>-</button>
+      <button class ="minus" onClick={()=>{
+        console.log("minus clicked")
+        setCounter(counter - 1);
+      }} disabled={counter < 1}>-</button>
       </div>
     </>
   )
 }
-export default App
+export default CounterProject // * function to be export 

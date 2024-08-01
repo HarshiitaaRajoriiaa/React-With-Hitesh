@@ -2,17 +2,21 @@ import './ChangeColor.css';
 import { useState } from 'react';
 
 function ChangeColor(){
-
   const [color, setColor] = useState("#242424"); //hook called
 
-  function changeColor(newColor) {
-    setColor(newColor);
-    document.body.style.backgroundColor = newColor;
+  function changeColor(Color) {
+    setColor(Color);
+    document.body.style.backgroundColor = Color;
   }
   return (
     <>
     <div>
-      <button className="blue" onClick={() => changeColor("#03346E")}></button>
+      <button className="blue" onClick={() => {
+        setColor("#03346E");
+        document.body.style.backgroundColor = "#03346E"
+      }
+      }
+        ></button>
       <button className="pink" onClick={() => changeColor("#FF407D")}></button>
       <button className="yellow" onClick={() => changeColor("#FFD35A")}></button>
       <button className="red" onClick={() => changeColor("#DD0A35")}></button>

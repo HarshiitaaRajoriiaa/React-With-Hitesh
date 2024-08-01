@@ -1,7 +1,14 @@
-:root{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+ h3, h2, h1, a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+a{
+    cursor: pointer;
+}

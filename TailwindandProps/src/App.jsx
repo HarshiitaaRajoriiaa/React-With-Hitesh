@@ -54,22 +54,7 @@ function App() {
         </div>
       </div>
 
-      {/*  card-03 - rotation. */}
-      {/* <div className="relative w-72 h-96 card-container">
-        <div className="absolute inset-0 card">
-          <div className="absolute inset-0 card-front bg-cover bg-center rounded-md" style="background-image: url('https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60');">
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent rounded-md"></div>
-            <div className="absolute bottom-4 left-4 text-left">
-              <h1 className="text-lg font-semibold text-white">Delba</h1>
-            </div>
-          </div>
-          <div className="absolute inset-0 card-back bg-gray-900 flex items-center justify-center rounded-md">
-            <p className="text-sm text-gray-300 px-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, debitis?
-            </p>
-          </div>
-        </div>
-      </div> */}
+      
     </>
   )
 }

@@ -1,13 +1,13 @@
-import { useState , useCallback , useEffect} from 'react'
+import { useState , useCallback , useEffect , useRef} from 'react'
 // import './App.css'
 
 function App() {
-
-
   const [length , setLength] = useState(8) //* initial length will be 8
   const [number , numberAllowed]= useState(false)
   const [char, specialCharAllowed]= useState(false)
-  const [password , setPassword] = useState("") //*initially nothing
+  const [password , setPassword] = useState(" ") //*initially nothing
+  const [popupVisible, setPopupVisible] = useState(false); 
+
 
 //TODO generate random password using alphanumeric characters corresponding to the conditions. [ number allowed? , special character allowed?]
   const generator = useCallback(()=>{
@@ -21,13 +21,21 @@ function App() {
     }
     setPassword(pass);
 
-  } , [length, number,char, setPassword ])
+  } , [length, number,char , setPassword])
   useEffect(()=>{
       generator()
   } , [length , numberAllowed , specialCharAllowed])
-  const copy = ()=>{
-
-  }
+  const passRef = useRef(null)
+  const copy = useCallback(()=>{
+    // passRef.current?.select();
+      window.navigator.clipboard.writeText(password)
+      setPopupVisible(true);
+      setTimeout(() => {
+        setPopupVisible(false); // Hide popup after 2 seconds
+      }, 1000);
+      console.log(password)
+    }  , [password])
+  
 
   return (
     <>
@@ -41,9 +49,12 @@ function App() {
         value ={password}
         placeholder="password"
         readOnly
+        ref={passRef}
         />
         <button 
-        className='outline-none bg-lime-700 text-white px-3 py-0.5 shrink-1 rounded-lg ml-7'>Copy</button>
+        onClick={ copy}
+        className='outline-none bg-lime-700 text-white px-3 py-0.5 shrink-1 rounded-lg ml-7 '
+        >Copy</button>
       </div>
       <div className='flex text-sm gap-x-2'>
         <div className='flex items-center gap-x-1'>
@@ -78,6 +89,11 @@ function App() {
           }}  
           />
           <label className='mr-2'> Numbers? </label>
+          {popupVisible && (
+          <div className='absolute top-20 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-2 rounded'>
+            Password copied to clipboard!
+          </div>
+        )}
         </div>
       </div>
     </div>

@@ -31,3 +31,4 @@ function App() {
       <Playing/> //for this i have to import playing in App.jsx too
   )
 }
+

@@ -1,5 +1,11 @@
-import React from "react";
-export default function InputBox() {
+import React from "react"
+export default function InputBox({
+    amount,
+    onAmountChange,
+    currencyType = [],
+    onCurrentTypeChange,
+    chosenCurrentType = "usd"
+}) {
     return (
         <>
             <div className=''>
@@ -14,14 +20,19 @@ export default function InputBox() {
                                 className="outline-none w-full bg-transparent py-1.5 text-slate-900"
                                 type="number"
                                 placeholder="Type Amount Here"
+                                value={amount}
+                                onChange={(e) =>
+                                    onAmountChange && onAmountChange(Number(e.target.value))
+                                }
                             />
                         </div>
                         <div className="w-auto flex items-center text-right">
                             <select
                                 className="rounded-lg px-1 py-1 bg-slate-800 cursor-pointer outline-none ml-2"
+                                value={currencyType}
                             >
                                 <option value="usd">
-                                    usd
+                                    {currencyType}
                                 </option>
                             </select>
                         </div>
@@ -34,19 +45,31 @@ export default function InputBox() {
                             <input
                                 className="outline-none w-full bg-transparent py-1.5 text-slate-900"
                                 type="number"
-                                placeholder="Converted Amount Here"
+                                placeholder="Converted Amount"
                             />
                         </div>
                         <div className="w-auto flex items-center text-right">
                             <select
                                 className="rounded-lg px-1 py-1 bg-slate-800 cursor-pointer outline-none ml-2"
+                                value={chosenCurrentType}
+                                onChange={(e)=>{
+                                    onCurrentTypeChange && onCurrentTypeChange(e.target.value)
+                                }}
                             >
-                                <option value="usd">
-                                    usd
-                                </option>
+                                {currencyType.map((currency)=>{
+                                    <option key={currency} value={currency}>
+                                        {currency}
+                                    </option>
+                                })}
                             </select>
                         </div>
                     </div>
+                    <div className="w-full h-full text-black bg-white rounded-xl m-1 p-2 flex justify-center items-center">
+                        <button className="bg-gray-700 rounded-lg text-white p-2 hover:bg-black">
+                            Convert
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </>

@@ -3,7 +3,10 @@ import './App.css'
 
 function App() {
 
-  let [counter, setCounter] = useState(0); //return array
+
+  
+  let [counter, setCounter] = useState(5); //return array
+
   const minusValue = () => {
     console.log("minus clicked")
     setCounter(counter - 1);
@@ -12,19 +15,16 @@ function App() {
     <>
       <div class="main">
         <h1 class="text">Counter:</h1>
-        <div class="rect"></div>
         <div class="display">{counter}</div>
         <button class="add" onClick={() => {
           console.log("add clicked")
-          setCounter(counter + 1); // counter = 1
+          setCounter(counter++); // counter = 1
           // ? what will happen??
-          setCounter(counter + 1); // counter = 2 or not
-          setCounter(counter + 1); // counter = 3 or not
-          setCounter(counter + 1); // counter = 4 or not
+          // setCounter(counter++); // counter = 2 or not
+          // setCounter(counter++); // counter = 3 or not
+          // setCounter(counter++); // counter = 4 or not
           // ! in react useState send all the changes to UI in batches like setCounter(counter + 1); in every line doing same that's why it is considering it as same in all the lines. 
           // that's why value incremented to 1 only irrespective of how many times you have been call the method setCounter()
-
-
           setCounter((previousValue) => previousValue + 1);
           setCounter((previous) => previous + 1);
           setCounter((Counter) => Counter + 1);

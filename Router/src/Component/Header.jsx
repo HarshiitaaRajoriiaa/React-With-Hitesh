@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 // a vs link vs navlink
-
+// a = reload entire page
+// link = only navigate to a specific page
+// navLink = only navigate to a specific page + isActive variable
 
 export default function Header() {
   return (
@@ -15,6 +17,9 @@ export default function Header() {
               alt="Logo"
             />
           </Link>
+          
+
+          {/* Login and get started  */}
           <div className="flex items-center lg:order-2">
             <Link
               to="#"
@@ -29,6 +34,10 @@ export default function Header() {
               Get started
             </Link>
           </div>
+
+
+
+
           <div
             className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
             id="mobile-menu-2"
